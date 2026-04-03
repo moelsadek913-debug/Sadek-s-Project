@@ -1,0 +1,17 @@
+{
+  "routes": {
+    "/": {},
+    "/cart": {},
+    "/checkout": {},
+    "/checkout-form": {},
+    "/dashboard": {},
+    "/home": {},
+    "/login": {},
+    "/orders": {},
+    "/product/1": {},
+    "/product/2": {},
+    "/product/3": {},
+    "/register": {},
+    "/wishlist": {}
+  }
+}
