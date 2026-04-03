@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <h2>Your Cart</h2>
+  <div *ngIf="items().length === 0" class="alert alert-info">Your cart is empty.</div>
+
+  <div *ngIf="items().length > 0">
+    <div class="list-group mb-3">
+      <div *ngFor="let it of items()" class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="d-flex gap-3 align-items-center">
+          <img [src]="it.product.image" alt="{{ it.product.title }}" width="64" height="48" class="rounded" />
+          <div>
+            <div class="fw-semibold">{{ it.product.title }}</div>
+            <div class="text-muted small">{{ it.product.price | currency }}</div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <div class="input-group input-group-sm qty-control">
+            <button class="btn btn-outline-secondary" type="button" (click)="decrease(it.product.id)">−</button>
+            <input type="text" [value]="it.qty" readonly class="form-control text-center" style="width:48px;" />
+            <button class="btn btn-outline-secondary" type="button" (click)="increase(it.product.id)">+</button>
+          </div>
+          <div class="text-end ms-2">
+            <div class="fw-semibold">{{ (it.qty * (it.product.price || 0)) | currency }}</div>
+            <button class="btn btn-sm btn-outline-danger mt-1" (click)="remove(it.product.id)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="fw-bold">Total</div>
+      <div class="fs-5 fw-bold">{{ total() | currency }}</div>
+    </div>
+
+    <div class="d-flex gap-2">
+      <a routerLink="/checkout-form" class="btn btn-success">Proceed to Checkout</a>
+      <button class="btn btn-outline-secondary" (click)="clear()">Clear Cart</button>
+    </div>
+  </div>
+</div>
+

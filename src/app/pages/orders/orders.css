@@ -1,0 +1,13 @@
+/* Orders page styles */
+.card {
+  border-left: 4px solid #007bff;
+}
+
+.card-header {
+  background-color: rgba(0,123,255,.03);
+}
+
+.badge {
+  font-size: 0.8em;
+}
+

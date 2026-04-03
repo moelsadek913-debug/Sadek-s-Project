@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-8">
+      <h2>Checkout</h2>
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h5>Shipping Details</h5>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" [(ngModel)]="form.name" placeholder="John Doe">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone</label>
+              <input type="tel" class="form-control" [(ngModel)]="form.phone" placeholder="123-456-7890">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <textarea class="form-control" rows="3" [(ngModel)]="form.address" placeholder="123 Main St, City"></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Payment Method</label>
+              <select class="form-select" [(ngModel)]="form.payment">
+                <option value="visa">Credit Card</option>
+                <option value="cash">Cash on Delivery</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card shadow-sm sticky-top" style="top: 20px;">
+        <div class="card-body">
+          <h5>Order Summary</h5>
+          <div *ngFor="let item of cartItems()" class="d-flex justify-content-between mb-2 small">
+            <span>{{ item.product.title }}</span>
+            <span>{{ item.qty }} x ${{ item.product.price.toFixed(2) }}</span>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between fs-5 fw-bold">
+            <span>Total</span>
+            <span>${{ cartTotal().toFixed(2) }}</span>
+          </div>
+          <button class="btn btn-success w-100 mt-3" (click)="onSubmit()">Place Order</button>
+          <a class="btn btn-outline-secondary w-100 mt-2" routerLink="/cart">Back to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

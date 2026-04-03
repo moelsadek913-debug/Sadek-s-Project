@@ -1,0 +1,14 @@
+/* Wishlist page styles */
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.btn {
+  border-radius: 0.5rem;
+}
+

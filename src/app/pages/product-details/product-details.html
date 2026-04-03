@@ -1,0 +1,43 @@
+<div class="container mt-4 max-width">
+  <a class="btn btn-outline-secondary mb-4 px-3 py-2" routerLink="/">
+    <i class="bi bi-arrow-left me-1"></i> All Products
+  </a>
+
+  <div class="row g-5">
+    <div class="col-lg-6">
+      <div class="product-image-container">
+[src]="product.image" [alt]="product.title"
+      </div>
+    </div>
+    
+    <div class="col-lg-6">
+      <div class="product-info">
+{{ product.title }}
+{{ product.description }}
+        
+        <div class="price-section mb-4">
+{{ product.price.toFixed(2) }}
+          <span class="stock-badge">In Stock</span>
+        </div>
+
+        <div class="quantity-section mb-4">
+          <label>Quantity:</label>
+          <input type="number" min="1" [value]="qty" (change)="onQtyChange($event)" class="quantity-input">
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-outline-primary me-3 p-3 px-4 btn-lg shadow-sm" (click)="toggleWishlist(product!)" [title]="wishlist.isInWishlist(product!.id) ? 'Remove from wishlist' : 'Add to wishlist'">
+            <i class="bi" [class.bi-heart]="!wishlist.isInWishlist(product!.id)" [class.bi-heart-fill]="wishlist.isInWishlist(product!.id)" style="font-size: 1.5rem; color: #dc3545;"></i>
+          </button>
+          <button class="btn btn-success btn-xl" (click)="addToCart()">
+            Add to Cart ({{ qty }})
+          </button>
+          <button class="btn btn-primary btn-xl ms-3" routerLink="/cart">
+            View Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
