@@ -54,6 +54,13 @@
               "extractLicenses": false,
               "sourceMap": true
             }
+            ,
+            "static": {
+              "outputMode": "static",
+              "outputPath": "docs",
+              "optimization": true,
+              "sourceMap": false
+            }
           },
           "defaultConfiguration": "production"
         },

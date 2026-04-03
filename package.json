@@ -5,9 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:static": "ng build --configuration=static",
     "watch": "ng build --watch --configuration development",
     "test": "echo \"No tests to run\"",
-    "serve:ssr:app": "node dist/app/server/server.mjs"
+    "serve:ssr:app": "node dist/app/server/server.mjs",
+    "predeploy": "npm run build:static",
+    "deploy": "npx angular-cli-ghpages --dir=docs"
   },
   "prettier": {
     "printWidth": 100,
