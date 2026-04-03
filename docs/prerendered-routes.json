@@ -1,17 +1,17 @@
 {
   "routes": {
-    "/": {},
-    "/cart": {},
-    "/checkout": {},
-    "/checkout-form": {},
-    "/dashboard": {},
-    "/home": {},
-    "/login": {},
-    "/orders": {},
-    "/product/1": {},
-    "/product/2": {},
-    "/product/3": {},
-    "/register": {},
-    "/wishlist": {}
+    "/Sadek-s-Project": {},
+    "/Sadek-s-Project/cart": {},
+    "/Sadek-s-Project/checkout": {},
+    "/Sadek-s-Project/checkout-form": {},
+    "/Sadek-s-Project/dashboard": {},
+    "/Sadek-s-Project/home": {},
+    "/Sadek-s-Project/login": {},
+    "/Sadek-s-Project/orders": {},
+    "/Sadek-s-Project/product/1": {},
+    "/Sadek-s-Project/product/2": {},
+    "/Sadek-s-Project/product/3": {},
+    "/Sadek-s-Project/register": {},
+    "/Sadek-s-Project/wishlist": {}
   }
 }
